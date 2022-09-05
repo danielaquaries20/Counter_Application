@@ -15,6 +15,8 @@ class MainViewModel : ViewModel() {
         val current = counter.get() ?: 0
         if (current != 0) {
             counter.set(current - 1)
+        } else {
+            return counter.set(0)
         }
 
     }
