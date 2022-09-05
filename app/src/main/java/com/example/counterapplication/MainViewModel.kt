@@ -8,15 +8,20 @@ class MainViewModel : ViewModel() {
 
     fun increaseCounter() {
         val current = counter.get() ?: 0
-        counter.set(current + 1)
+        if (current < 99) {
+            counter.set(current + 1)
+        } else {
+            return counter.set(99)
+        }
+
     }
 
     fun decreaseCounter() {
         val current = counter.get() ?: 0
-        if (current != 0) {
+        if (current > 0) {
             counter.set(current - 1)
         } else {
-            return counter.set(0)
+            counter.set(0)
         }
 
     }
