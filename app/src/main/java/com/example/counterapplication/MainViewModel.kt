@@ -13,7 +13,10 @@ class MainViewModel : ViewModel() {
 
     fun decreaseCounter() {
         val current = counter.get() ?: 0
-        counter.set(current - 1)
+        if (current != 0) {
+            counter.set(current - 1)
+        }
+
     }
 
 
